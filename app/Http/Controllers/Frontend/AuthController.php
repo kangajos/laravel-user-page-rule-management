@@ -12,8 +12,16 @@ class AuthController extends Controller
         return view("pages.frontend.auth.login");
     }
 
+    public function loginPost(Request $request)
+    {
+    }
+
     public function register()
     {
         return view("pages.frontend.auth.register");
+    }
+
+    public function registerPost(Request $request)
+    {
     }
 }

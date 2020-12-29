@@ -21,5 +21,7 @@ Route::get('/', function () {
 // route login and register
 Route::prefix("auth")->group(function () {
     Route::get("/", [AuthController::class, "login"])->name("auth.login");
+    Route::post("/", [AuthController::class, "loginPost"])->name("auth.login.post");
     Route::get("/register", [AuthController::class, "register"])->name("auth.register");
+    Route::post("/register", [AuthController::class, "registerPost"])->name("auth.register.post");
 });
