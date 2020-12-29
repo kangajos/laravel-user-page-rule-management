@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Frontend\AuthController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,4 +16,10 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('pages.backend.dashboard.index');
+});
+
+// route login and register
+Route::prefix("auth")->group(function () {
+    Route::get("/", [AuthController::class, "login"])->name("auth.login");
+    Route::get("/register", [AuthController::class, "register"])->name("auth.register");
 });
